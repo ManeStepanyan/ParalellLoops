@@ -22,6 +22,9 @@ namespace ParalellLoops
             {
                 throw new ArgumentNullException("No action");
             }
+            if(toExclusive <= fromInclusive){
+                throw new Exception("Upper bound must be bigger");
+            }
             int j = 0;
             Task[] tasks = new Task[toExclusive - fromInclusive];
             for (int i = fromInclusive; i < toExclusive; i++)
